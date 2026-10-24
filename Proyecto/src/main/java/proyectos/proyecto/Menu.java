@@ -23,7 +23,7 @@ public class Menu {
         System.out.println("Seleccione una opcion:");
         int opcion;
         while(true){
-            if(sc.hasNextInt()){
+            if(!sc.hasNextInt()){
                 System.out.println("Opcion invalida");
                 Menu.Menu();
                 sc.next();

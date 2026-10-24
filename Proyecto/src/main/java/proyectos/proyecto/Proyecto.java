@@ -29,17 +29,29 @@ public class Proyecto {
             }
             
             
-            int opcion = Menu.opcionMenu();
-            switch(opcion){
+            int opcion;
+            boolean a = true;
+            while(a){
+                opcion = Menu.opcionMenu();
+                switch(opcion){
                 case 1: Accion.Agregar(juegos);
+                        break;
                 case 2: Accion.Elminar(juegos);
+                        break;
                 case 3: Accion.ModificarEstado(juegos);
+                        break;
                 case 4: 
                         for (Juego juego : juegos) {
                         System.out.println(juego);
+                           
                     }
-                case 5: System.out.println("Saliendo....");;
+                        break;
+                case 5: 
+                    System.out.println("Saliendo....");
+                    a = false;
+                    break;
             }
+        }
 
         
     }
