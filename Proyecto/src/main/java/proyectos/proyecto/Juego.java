@@ -1,15 +1,16 @@
 
 package proyectos.proyecto;
+import java.util.Collections;
 
-public class Juego {
+public class Juego implements Comparable<Juego> {
     private int id;
     private String nombre;
-    private int calificacion;
+    private Double calificacion;
     private Estado estado;
     private Plataforma plataforma;
     static int contador = 0;
     
-    public Juego(int id, String nombre, int calificacion, Estado estadom, Plataforma plataforma){
+    public Juego(int id, String nombre, Double calificacion, Estado estadom, Plataforma plataforma){
         this.id=id;
         this.nombre=nombre;
         this.calificacion=calificacion;
@@ -40,11 +41,11 @@ public class Juego {
         this.nombre = nombre;
     }
 
-    public int getCalificacion() {
+    public Double getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(int calificacion) {
+    public void setCalificacion(Double calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -59,6 +60,11 @@ public class Juego {
     @Override
     public String toString() {
         return "Juego{" + "id=" + id + ", nombre=" + nombre + ", calificacion=" + calificacion + ", estado=" + estado + ", plataforma=" + plataforma + '}';
+    }
+
+    @Override
+    public int compareTo(Juego otro) {
+      return this.compareTo(otro);
     }
     
    
