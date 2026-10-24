@@ -1,23 +1,35 @@
-
 package proyectos.proyecto;
-import java.util.Collections;
 
 public class Juego implements Comparable<Juego> {
+
     private int id;
     private String nombre;
     private Double calificacion;
     private Estado estado;
     private Plataforma plataforma;
-    static int contador = 0;
-    
-    public Juego(int id, String nombre, Double calificacion, Estado estado, Plataforma plataforma){
-        this.id=id;
-        this.nombre=nombre;
-        this.calificacion=calificacion;
+
+    private static int contador = 0;
+
+    // Constructor que genera el ID automaticamente
+    public Juego(String nombre, Double calificacion, Estado estado, Plataforma plataforma) {
+        this.id = ++contador;
+        this.nombre = nombre;
+        this.calificacion = calificacion;
         this.estado = estado;
         this.plataforma = plataforma;
-        contador++;
-      
+    }
+
+    // Constructor compatible con tu codigo anterior
+    public Juego(int id, String nombre, Double calificacion, Estado estado, Plataforma plataforma) {
+        this.id = id;
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+        this.estado = estado;
+        this.plataforma = plataforma;
+
+        if (id > contador) {
+            contador = id;
+        }
     }
 
     public Plataforma getPlataforma() {
@@ -28,7 +40,6 @@ public class Juego implements Comparable<Juego> {
         this.plataforma = plataforma;
     }
 
-    
     public int getId() {
         return id;
     }
@@ -59,18 +70,18 @@ public class Juego implements Comparable<Juego> {
 
     @Override
     public String toString() {
-        return "Titulo: "+nombre+ "ID: "+id+
-                "\nCalificacion :"+calificacion+
-                "\nPlataforma :"+plataforma+
-                "\nEstado :"+estado+
-                "\n########################################";
-       
+        return "========== JUEGO ==========\n"
+                + "ID: " + id
+                + "\nTitulo: " + nombre
+                + "\nCalificacion: " + calificacion
+                + "\nPlataforma: " + plataforma
+                + "\nEstado: " + estado
+                + "\n===========================";
     }
 
+    // Orden natural: por nombre alfabeticamente
     @Override
     public int compareTo(Juego otro) {
-      return this.compareTo(otro);
+        return this.nombre.compareToIgnoreCase(otro.nombre);
     }
-    
-   
 }
