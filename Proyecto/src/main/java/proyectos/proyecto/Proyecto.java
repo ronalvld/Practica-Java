@@ -27,6 +27,19 @@ public class Proyecto {
             for (Juego juego : juegos) {
                 System.out.println(juego);
             }
+            
+            
+            int opcion = Menu.opcionMenu();
+            switch(opcion){
+                case 1: Accion.Agregar(juegos);
+                case 2: Accion.Elminar(juegos);
+                case 3: Accion.ModificarEstado(juegos);
+                case 4: 
+                        for (Juego juego : juegos) {
+                        System.out.println(juego);
+                    }
+                case 5: System.out.println("Saliendo....");;
+            }
 
         
     }
