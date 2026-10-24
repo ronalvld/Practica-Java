@@ -10,7 +10,7 @@ public class Juego implements Comparable<Juego> {
     private Plataforma plataforma;
     static int contador = 0;
     
-    public Juego(int id, String nombre, Double calificacion, Estado estadom, Plataforma plataforma){
+    public Juego(int id, String nombre, Double calificacion, Estado estado, Plataforma plataforma){
         this.id=id;
         this.nombre=nombre;
         this.calificacion=calificacion;
@@ -59,7 +59,12 @@ public class Juego implements Comparable<Juego> {
 
     @Override
     public String toString() {
-        return "Juego{" + "id=" + id + ", nombre=" + nombre + ", calificacion=" + calificacion + ", estado=" + estado + ", plataforma=" + plataforma + '}';
+        return "Titulo: "+nombre+ "ID: "+id+
+                "\nCalificacion :"+calificacion+
+                "\nPlataforma :"+plataforma+
+                "\nEstado :"+estado+
+                "\n########################################";
+       
     }
 
     @Override
